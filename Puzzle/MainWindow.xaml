@@ -1,0 +1,40 @@
+﻿<Window x:Class="Puzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Puzzle"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        KeyDown="Window_KeyDown"
+        Title="Puzzle" Height="600" Width="800">
+    <Grid Name="Container">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Load image" Name="Open" Click="Open_Click"></MenuItem>
+            <MenuItem Header="Setup blocks" Name="Setup" Click="Setup_Click"></MenuItem>
+        </Menu>
+        <TabControl Grid.Row="1" Name="Tabs">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Puzzle"></TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid Name="MainGrid"></Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Image"></TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Image Name="GeneralImage" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill"></Image>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>        
+    </Grid>
+</Window>
